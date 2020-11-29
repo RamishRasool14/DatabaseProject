@@ -14,7 +14,7 @@
 </head>
 
 <body class='container'>
-    <h1> Student </h1>
+    <h1 id = "123"></h1>
     <div class='row'>
         <div class="col-sm">
             <div class="card" style="width: 18rem;">
@@ -30,7 +30,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Weekly Schedule</h5>
                     <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">click to view</a>
+                    <a id = 'weekly_schedule', class="btn btn-primary", onclick="sendData()">click to view</a>
                 </div>
             </div>
         </div>
@@ -99,6 +99,37 @@
     </div>
 
     </div>
+<script>
+
+    
+const queryString = window.location.search.replace(/^.*?\=/,'');
+document.getElementById("123").innerHTML = 'Student: ' + queryString ;
+
+
+
+
+// function sendData()
+// {
+//     const button = document.getElementById('weekly_schedule');
+//     button.addEventListener('click', async _ => {
+//   try {     
+//     const response = await fetch('student/weekly_schedule.php', {
+//       method: 'post',
+//       body: {
+//         queryString;
+//       }
+//     });
+//     console.log('Completed!', response);
+//   } catch(err) {
+//     console.error(`Error: ${err}`);
+//   }
+// });
+
+// }
+
+
+
+</script>
 </body>
 
 
