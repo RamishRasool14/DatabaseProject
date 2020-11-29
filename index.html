@@ -1,36 +1,29 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <title>Login Page</title>
   </head>
 
   <body>
-
-
     <h1>Login Page</h1>
 
-    <form action="action.php" method="get">
-  <input type="radio" id="admin" name="actor" value="admin">
-  <label for="admin">Admin</label><br>
-  <input type="radio" id="faculty" name="actor" value="faculty">
-  <label for="faculty">Faculty</label><br>
-  <input type="radio" id="student" name="actor" value="student">
-  <label for="Student">Student</label><br>
-  <input type="radio" id="helpdesk" name="actor" value="helpdesk">
-  <label for="HelpDesk">HelpDesk</label><br>
+    <form action="action.php" method="post">
+      <input type="radio" id="admin" name="actor" value="admin" />
+      <label for="admin">Admin</label><br />
+      <input type="radio" id="faculty" name="actor" value="faculty" />
+      <label for="faculty">Faculty</label><br />
+      <input type="radio" id="student" name="actor" value="student" />
+      <label for="Student">Student</label><br />
+      <input type="radio" id="helpdesk" name="actor" value="helpdesk" />
+      <label for="HelpDesk">HelpDesk</label><br />
 
-  <label for="name">Name</label><br>
-  <input type="text" id="name" name="name"><br>
+      <label for="name">Name</label><br />
+      <input type="text" id="name" name="name" /><br />
 
-  <label for="pass">Password</label><br>
-  <input type="password" id="pass" name="password"><br><br>
+      <label for="pass">Password</label><br />
+      <input type="password" id="pass" name="password" /><br /><br />
 
-
-  <input type="submit" value="Submit">
-	
-	</form>
-
-
+      <input type="submit" value="Submit" />
+    </form>
   </body>
 </html>

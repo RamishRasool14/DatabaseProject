@@ -1,14 +1,14 @@
 <?php
 
-$a = $_GET['actor'];
-$n = $_GET['name'];
-$p = $_GET["password"];
+$actor = $_POST['actor'];
+$name = $_POST['name'];
+$passwrd = $_POST["password"];
 
 
-$servername = 'localhost:3308';
-$username = 'root';
-$password = '';
-$dbname = 'universitydatabase';
+$servername = 'localhost';
+$username = 'hammad';
+$password = 'Hammad@786';
+$dbname = 'Database';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -17,14 +17,18 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT name,password FROM '$a'";
-$result = $conn->query($sql);
+$sql = "SELECT * FROM `admin` WHERE `name` = '$name' AND `password` = '$passwrd'";
+// echo $sql;
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+if ($row['name']==$name && $row['password']==$passwrd ) {
+  //
+  // $row = mysqli_fetch_assoc($result);
+  // echo $row['name'] . ' ';
+  // echo $row["password"];
+  // header()
+  header("Location: administrator.php"); /* Redirect browser */
 
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-    echo "id: " . $row["admin_id"]. " - Name: " . $row["name"]. " " . $row["password"]. "<br>";
-  }
 } else {
   echo "0 results";
 }
