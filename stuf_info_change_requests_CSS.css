@@ -1,0 +1,36 @@
+body{
+    background-color: #f7f7f7;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.form-row{
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.form-row input{
+    padding: 2px;
+    padding-left : 15px;
+    border-radius: 1px;
+}
+
+.custom-div{
+    display: inline;
+}
+
+
+.custom-input{
+    width: 40%;
+}

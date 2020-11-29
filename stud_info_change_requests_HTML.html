@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Student Page</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1> Student Information</h1>
+        <div class="container">
+            <form class="main-form">
+                <div class="form-row">
+                    <label class="main-label" for="id">
+                        Student ID
+                    </label>
+                    <input readonly="readonly" placeholder="43434343" id="id-input" class="main-input" type="text">
+                    <button class="button-change">
+                        Change
+                    </button>
+                </div>
+                <div class="form-row">
+                    <label class="main-label" for="name">
+                        Student Name
+                    </label>
+                    <input readonly="readonly" placeholder="Zahidru" id="name-input" class="main-input" type="text">
+                    <button class="button-change">
+                        Change
+                    </button>
+                </div>
+                <div class="form-row">
+                    <label class="main-label" for="password">
+                        Password
+                    </label>
+                    <input readonly="readonly" placeholder="applesandoranges" id="password-input" class="main-input"
+                        type="password">
+                    <button class="button-change">
+                        Change
+                    </button>
+                </div>
+                <div id="optional" class="form-row">
+                    <label id="change" id="password2" class="main-label" for="password2">
+                        Confirm Password
+                    </label>
+                    <input readonly="readonly" placeholder="applesandoranges" id="password2-input" class="main-input"
+                        type="password">
+                    <button id="change" class="button-change">
+                        Change
+                    </button>
+                </div>
+                <div class="form-row">
+                    <label class="main-label" for="address">
+                        Address
+                    </label>
+                    <input readonly="readonly" placeholder="56-Wapda Avenue " id="address-input" class="main-input"
+                        type="text">
+                    <button id="change" class="button-change">
+                        Change
+                    </button>
+                </div>
+                <div class="form-row">
+                    <label class="main-label" for="contact">
+                        Contact Number
+                    </label>
+                    <input readonly="readonly" placeholder="0433767456" id="contact-input" class="main-input"
+                        type="text">
+                    <button id="change" class="button-change">
+                        Change
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
