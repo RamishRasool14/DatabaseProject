@@ -22,7 +22,7 @@
     $result = mysqli_query($conn, $sql);
 
     if(mysqli_query($conn, $sql)){
-        echo "Entertain Personal Information Change Requests";
+        echo "View Teacher Assistant Applications";
     } else{
         echo "Query Failed";
     }
