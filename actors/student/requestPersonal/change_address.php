@@ -3,7 +3,7 @@
     // session_start();
     // $user_id = $_SESSION['user_id'];
 
-$user_id = $_GET['student_id'];
+$user_id = $_GET['ID'];
 $ref_num = "1";
 $new_address = $_GET['newaddress'];
 

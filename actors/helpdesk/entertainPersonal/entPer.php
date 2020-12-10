@@ -57,7 +57,7 @@
 
                     <td>
                     
-                        <form id = "accept" action="entertain.php" method = "POST">
+                        <form id = "accept" action="action.php" method = "POST">
                             <input type="submit"  value = "Accept"> 
                             <input type="hidden" name = "student_ID" value = "<?php echo $row['student_id']; ?>" >
                             <input type="hidden" name = "reference_no" value = "<?php echo $row['reference_no']; ?>">

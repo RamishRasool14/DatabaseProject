@@ -1,9 +1,9 @@
 <?php
 
-    session_start();
-    $user_id = $_SESSION['user_id'];
+    // session_start();
+    // $user_id = $_SESSION['user_id'];
 
-$user_id = $_GET['student_id'];
+$user_id = $_GET['student_ID'];
 $new_contact = $_GET['newcontact'];
 $ref_num = "2";
 
