@@ -1,9 +1,9 @@
 <?php 
 class Database {
 	private $host = "localhost";
-	private $user = "hammad";
-	private $password = "Hammad@786";
-	private $database = "Project";
+	private $user = "root";
+	private $password = "";
+	private $database = "demo_db";
   
   private $result = array();
 	function runQuery($sql) {
