@@ -1,8 +1,8 @@
 <?php
 $servername = 'localhost';
-$username = 'hammad';
-$password = 'Hammad@786';
-$dbname = 'Project';
+$username =  'id15668406_hammadjamal';
+$password = 's9W^-~a+PlrO]]?j';
+$dbname =  'id15668406_project';
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
@@ -56,6 +56,8 @@ echo    "<th>Password</th>";
 echo    "<th>Address</th>";
 echo    "<th>Contact</th>";
 echo    "<th>Department</th>";
+echo    "<th>Contact</th>";
+echo    "<th>Email</th>";
 echo  "</tr>" ;
 while ($row = mysqli_fetch_assoc($result)) {
     echo "<tr>" ;
@@ -65,6 +67,8 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo "<td>"." ".$row["address"]." "."</td>";
     echo "<td>"." ".$row["contact"]." "."</td>";
     echo "<td>"." ".$row["dept_name"]." "."</td>";
+    echo "<td>"." ".$row["contact"]." "."</td>";
+    echo "<td>"." ".$row["email"]." "."</td>";
     echo "</tr>";
 }
 echo "</table>";
@@ -83,6 +87,7 @@ echo    "<th>Course ID</th>";
 echo    "<th>Title</th>";
 echo    "<th>Department</th>";
 echo    "<th>Credits</th>";
+echo    "<th>Cap</th>";
 echo  "</tr>" ;
 while ($row = mysqli_fetch_assoc($result)) {
     echo "<tr>" ;
@@ -90,10 +95,11 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo "<td>"." ".$row["title"]." "."</td>";
     echo "<td>"." ".$row["dept_name"]." "."</td>";
     echo "<td>"." ".$row["credits"]." "."</td>";
+    echo "<td>"." ".$row["cap"]." "."</td>";
 }
 echo "</table>";
 
-    
+
 }
 else {
 
@@ -107,6 +113,10 @@ else {
 <!DOCTYPE html>
 <html>
 <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 <style>
 table {
   font-family: arial, sans-serif;
@@ -132,7 +142,9 @@ h2{
 }
 </style>
 </head>
+<body>
+  <ul class="pager">
+    <li><a href="/actors/admin.html">Home</a></li>
+  </ul>
+  </body>
 </html>
-
-
-

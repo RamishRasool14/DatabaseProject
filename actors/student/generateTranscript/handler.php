@@ -4,18 +4,20 @@
 // namespace Dompdf;
 require 'database.php';
 
+session_start();
+$users = $_SESSION["user_id"];
 
 $passwrd = $_GET['pass'];
 $username = $_GET['HIDDEN'];
 
 $database = new Database();
 
-$resultV = $database->runQuery("SELECT `password` FROM `student` WHERE `student_id` = 22100243");
+$resultV = $database->runQuery("SELECT `password` FROM `student` WHERE `student_id` = $users");
 $rowV= mysqli_fetch_assoc($resultV);
 
 if ($rowV['password'] == $passwrd){
 
-$result = $database->runQuery("SELECT * FROM `student` WHERE `student_id` = 22100243 and `password`='$passwrd'");
+$result = $database->runQuery("SELECT * FROM `student` WHERE `student_id` = $users and `password`='$passwrd'");
 $row = mysqli_fetch_assoc($result);
 
 
@@ -33,8 +35,9 @@ $pdf->SetFont('Arial','',13);
 
 $pdf->Cell(30,8,$row['name'],0,0,'L');
 $pdf->SetFont('Arial',"B",14);
+$pdf->Ln();
 
-$pdf->Cell(60,8,'Address: ',0,0,'C');
+$pdf->Cell(50,8,'Address: ',0,0,'L');
 $pdf->SetFont('Arial','',13);
 
 $pdf->Cell(30,8,$row['address'],0,0,'L');
@@ -69,16 +72,16 @@ $pdf->Cell(180,16,'Grades And CGPA Information',1 ,1,'C');
 
 $pdf->SetFont('Arial',"IU",12);
 
-$pdf->Cell(36,10,'Course Code',1,0,'C');
-$pdf->Cell(52,10,'Title',1,0,'C');
+// $pdf->Cell(36,10,'Course Code',1,0,'C');
+$pdf->Cell(58+36,10,'Title',1,0,'C');
 
 $pdf->Cell(24,10,'Grade',1,0,'C');
 
 $pdf->Cell(32,10,'Semester',1,0,'C');
-$pdf->Cell(36,10,'Year',1,0,'C');
+$pdf->Cell(30,10,'Year',1,0,'C');
 $pdf->SetFont('Arial',"",12);
 
-$result1 = $database->runQuery("SELECT * FROM `enrolled` WHERE `student_id` = 22100243");
+$result1 = $database->runQuery("SELECT * FROM `enrolled` WHERE `student_id` = $users and `grade` is not NULL");
 
 $pdf->Ln();
 
@@ -113,7 +116,7 @@ function gpa_calculator($grades){
             }
             elseif ($grades[$i] == 'C'){
                 $points = $points + 2.0;
-                
+
             }
             elseif ($grades[$i] == 'C-'){
 
@@ -133,31 +136,31 @@ function gpa_calculator($grades){
             elseif ($grades[$i] == 'F'){
                 $points = $points + 0.0;
 
-            }  
-        
-                
+            }
+
+
 
 
 
 }
 
-            
+
         $gpa = $points / count($grades);
         return $gpa;
- 
+
 }
-$GradesArray = []; 
+$GradesArray = [];
 
 function WriteRow($pdf,$row,$database) {
 
-$pdf->Cell(36,6,$row['course_id'],1,0,'C');
+// $pdf->Cell(36,6,$row['course_id'],1,0,'C');
 $id = $row['course_id'];
-$result2 = $database->runQuery("SELECT DISTINCT(`title`) FROM `course` WHERE `course_id` = $id");
+$result2 = $database->runQuery("SELECT DISTINCT(`title`) FROM `course` WHERE `course_id` = '$id'");
 $row2 = mysqli_fetch_assoc($result2);
 $coursename = $row2['title'];
+// echo ;
 
-
-$pdf->Cell(52,6,$coursename,1,0,'C');
+$pdf->Cell(58+36,6, $coursename,1,0,'C');
 
 $pdf->Cell(24,6,$row['grade'],1,0,'C');
 
@@ -165,7 +168,7 @@ $pdf->Cell(24,6,$row['grade'],1,0,'C');
 array_push( $GLOBALS['GradesArray'],$row['grade']);
 
 $pdf->Cell(32,6,$row['semester'],1,0,'C');
-$pdf->Cell(36,6,$row['year'],1,0,'C');
+$pdf->Cell(30,6,$row['year'],1,0,'C');
 $pdf->SetFont('Arial',"",12);
 
 $pdf->Ln();
@@ -174,7 +177,7 @@ for ($x = 0; $x < mysqli_num_rows($result1); $x++) {
   $row = mysqli_fetch_assoc($result1);
 
   WriteRow($pdf,$row,$database);
-  
+
 }
 
 $pdf->SetFont('Arial',"BI",12);
@@ -226,4 +229,3 @@ else{
 
 
 ?>
-

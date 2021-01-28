@@ -3,7 +3,7 @@
 <style>
     .container {
         background-image: url("image.jpg");
-        background-size: cover;
+        height: 100%;
         opacity: 0.9;
         color: white;
         font-weight: 500;
@@ -11,6 +11,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background-size: cover;
     }
 
     .container .disp {
@@ -44,17 +45,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Request Personal Information Change</title>
 </head>
 
 <body>
     <div class="container">
+        
+        <!--<div class="disp"> Student ID </div>-->
+        <!--<div class="disp"> Student Name </div>-->
+        <div class="disp">  </div>
         <h1> Request Personal Information Change </h1>
-        <div class="disp"> Student ID </div>
-        <div class="disp"> Student Name </div>
+        <div class="disp">  </div>
         <div class="button1"><a href="change_password.html"> Change Password</a> </div>
-        <div class="button1"> <a href="change_address.html">Address </a> </div>
-        <div class="button1"><a href="change_contact.html"> Contact Number </a></div>
+        <div class="button1"> <a href="change_address.html"> Change Address </a> </div>
+        <div class="button1"><a href="change_contact.html">Change Contact Number </a></div>
+        <div class="button1"><a href="/actors/student.html">Home </a></div>
+
+        <div class="disp">  </div>
+        <div class="disp">  </div>
+        <div class="disp">  </div>
+        
     </div>
 </body>
 

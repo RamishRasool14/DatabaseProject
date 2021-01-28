@@ -1,14 +1,14 @@
 <?php
-
-    $user_ID = $_GET['ID'];
+    session_start();
+    $user_ID = $_SESSION['user_id'];
     $old_password = $_GET['old_password'];
     $new_password1 = $_GET['new_password1'];
     $new_password2 = $_GET['new_password2'];
 
     $servername = 'localhost';
-    $username = 'root';
-    $password = "";
-    $dbname = "demo_db";
+$username = 'id15668406_hammadjamal';
+$password = 's9W^-~a+PlrO]]?j';
+$dbname = 'id15668406_project';
 
     $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -26,7 +26,7 @@
         else{
             $sql = "UPDATE student SET `password` = '$new_password1' WHERE `student_id` = '$user_ID'";
             if(mysqli_query($conn, $sql)){
-                echo "PASSWORD CHANGED";
+                // echo "PASSWORD CHANGED";
             } else{
                 echo "Query Failed";
             }
@@ -38,6 +38,7 @@
     }
         
    
+    header("Location: /actors/student/requestPersonal/reqChange.html");
 
 
     mysqli_close($conn);

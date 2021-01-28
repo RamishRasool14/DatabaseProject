@@ -5,7 +5,7 @@
     <style>
       body {
         font-family: Arial, Helvetica, sans-serif;
-        background-image: url("photo2.jpg");
+        background-image: url("opener.jpeg");
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
@@ -44,19 +44,20 @@
         background-color: #f44336;
       }
 
-      .imgcontainer {
-        text-align: center;
-        margin: 24px 0 12px 0;
-      }
+      /*.imgcontainer {*/
+      /*  text-align: center;*/
+      /*  margin: 24px 0 12px 0;*/
+      /*}*/
 
-      img.avatar {
-        width: 40%;
-        border-radius: 50%;
-      }
+      /*img.avatar {*/
+      /*  width: 40%;*/
+      /*  border-radius: 50%;*/
+      /*}*/
 
       .container {
-        padding: 50px;
-        width: 40%;
+        /*margin: 60px auto;*/
+        padding: 30px;
+        width: 30%;
       }
       #custom-select {
         padding: 16px;
@@ -82,45 +83,42 @@
           width: 100%;
         }
       }
+      .card {
+
+        font-weight: bold;
+
+      }
     </style>
   </head>
   <body>
-    <h2>Login Form</h2>
-
+    <h2 style="padding-top: 50px; padding-left: 60px; color: white; font-size: 60px;   font-style: italic;
+font-family: Arial, Helvetica, sans-serif; ">PYRACLE</h2>
     <form action="action.php" method="get">
       <div class="container">
         <div>
-          <select name="actor" id="custom-select">
+          <select style = "  border-radius: 10px;" name="actor" id="custom-select">
             <option value="0">Sign In As:</option>
-            <option value="1">faculty</option>
-            <option value="2">helpdesk staff</option>
-            <option value="3">student</option>
-            <option value="4">admin</option>
+            <option value="1">Faculty</option>
+            <option value="2">Helpdesk Staff</option>
+            <option value="3">Student</option>
+            <option value="4">Admin</option>
           </select>
         </div>
         <br />
-        <label for="uname"><b>UserID</b></label>
-        <input type="text" placeholder="Enter UserID" name="uname" required />
+        <label style = "color: white;" for="uname"><b>User ID</b></label>
+        <input style = "  border-radius: 10px;"  type="text" placeholder="Enter User ID" name="uname" required />
 
-        <label for="psw"><b>Password</b></label>
+        <label style = "color: white;" for="psw"><b>Password</b></label>
         <input
           type="password"
           placeholder="Enter Password"
+          style = "  border-radius: 10px;" 
           name="psw"
           required
         />
-
-        <button type="submit">Login</button>
-        <!-- <label>
-          <input type="checkbox" checked="checked" name="remember" /> Remember
-          me -->
-        <!-- </label> -->
+        <button style = "  border-radius: 25px;"  type="submit">Login</button>
       </div>
-
-      <!-- <div class="container" style="background-color: #f1f1f1"> -->
-      <!-- <button type="button" class="cancelbtn">Cancel</button> -->
-      <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
-      <!-- </div> -->
     </form>
+  </div>
   </body>
 </html>

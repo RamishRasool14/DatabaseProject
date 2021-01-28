@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: url("opener.jpeg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+      /* form {
+        border: 3px solid #f1f1f1;
+      } */
+
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      button:hover {
+        opacity: 0.8;
+      }
+
+      .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
+      }
+
+      /*.imgcontainer {*/
+      /*  text-align: center;*/
+      /*  margin: 24px 0 12px 0;*/
+      /*}*/
+
+      /*img.avatar {*/
+      /*  width: 40%;*/
+      /*  border-radius: 50%;*/
+      /*}*/
+
+      .container {
+        /*margin: 60px auto;*/
+        padding: 30px;
+        width: 30%;
+      }
+      #custom-select {
+        padding: 16px;
+        width: 100%;
+        margin: 8px 0;
+        display: inline-block;
+        /* border: 1px solid #ccc; */
+        box-sizing: border-box;
+      }
+
+      .custom span.psw {
+        float: right;
+        padding-top: 16px;
+      }
+
+      /* Change styles for span and cancel button on extra small screens */
+      @media screen and (max-width: 300px) {
+        span.psw {
+          display: block;
+          float: none;
+        }
+        .cancelbtn {
+          width: 100%;
+        }
+      }
+      .card {
+
+        font-weight: bold;
+
+      }
+    </style>
+  </head>
+  <body>
+    <h2 style="padding-top: 50px; padding-left: 60px; color: white; font-size: 60px;  font-style: italic; font-family: Arial, Helvetica, sans-serif; ">PYRACLE</h2>
+    <p style = "padding-left: 60px; color: red; font-size: 20px; font-family: Arial, Helvetica, sans-serif;  font-weight: bold;
+"> *Sorry, that didn't work. </p>
+    <form action="action.php" method="get">
+      <div class="container">
+        <div>
+          <select style = "  border-radius: 10px;" name="actor" id="custom-select">
+            <option value="0">Sign In As:</option>
+            <option value="1">Faculty</option>
+            <option value="2">Helpdesk Staff</option>
+            <option value="3">Student</option>
+            <option value="4">Admin</option>
+          </select>
+        </div>
+        <br />
+        <label style = "color: white;" for="uname"><b>User ID</b></label>
+        <input style = "  border-radius: 10px;"  type="text" placeholder="Enter User ID" name="uname" required />
+
+        <label style = "color: white;" for="psw"><b>Password</b></label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          style = "  border-radius: 10px;" 
+          name="psw"
+          required
+        />
+        <button style = "  border-radius: 25px;"  type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+  </body>
+</html>
+

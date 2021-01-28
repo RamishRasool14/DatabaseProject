@@ -8,9 +8,9 @@ $Code = $_GET['Code'];
 $CourseSection = $_GET['CourseName'];
 
 $servername = 'localhost';
-$username = 'hammad';
-$password = 'Hammad@786';
-$dbname = 'Project';
+$username = 'id15668406_hammadjamal';
+$password = 's9W^-~a+PlrO]]?j';
+$dbname = 'id15668406_project';
 
 // // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -20,7 +20,7 @@ if ($conn->connect_error) {
 }
 
 $sql = "INSERT INTO `ta_application`
-VALUES ($RollNumber, '$Code', '$CourseSection');";
+VALUES ($RollNumber, '$Code', $CourseSection);";
 // echo $sql;
 if(mysqli_query($conn, $sql)){
 
@@ -32,7 +32,7 @@ else{
 }
 // $row = mysqli_fetch_assoc($result);
 // if ($row['name']==$name && $row['password']==$passwrd ) {
-  
+
 // //   header("Location: administrator.php"); /* Redirect browser */
 
 // } else {
